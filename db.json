@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "id": "8992745120650",
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with high precision.",
+      "price": 150000,
+      "stock": 110
+    }
+  ],
+  "logs": [
+    {
+      "id": 1,
+      "product_id": "8992745120650",
+      "type": "stock_in",
+      "quantity": 10,
+      "note": "Restocked due to high demand",
+      "date": "2024-11-22T10:00:00Z"
+    }
+  ]
+}
