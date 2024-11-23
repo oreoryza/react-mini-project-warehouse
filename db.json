@@ -4,18 +4,41 @@
       "id": "8992745120650",
       "name": "Wireless Mouse",
       "description": "Ergonomic wireless mouse with high precision.",
-      "price": 150000,
-      "stock": 110
+      "price": "10000",
+      "stock": "11"
+    },
+    {
+      "id": "051111407592",
+      "name": "sdf",
+      "description": "asda",
+      "price": "10000",
+      "stock": "2"
     }
   ],
   "logs": [
     {
-      "id": 1,
+      "id": "1",
       "product_id": "8992745120650",
       "type": "stock_in",
       "quantity": 10,
       "note": "Restocked due to high demand",
       "date": "2024-11-22T10:00:00Z"
+    },
+    {
+      "id": "a752cb29-8558-46f4-a2e9-b13ea6e0ad4a",
+      "product_id": "051111407592",
+      "type": "stock_in",
+      "quantity": 4,
+      "note": "asd asd ",
+      "date": "2024-11-23T14:59:05.673Z"
+    },
+    {
+      "id": "536e880e-2658-4ee2-b45c-e5dfa822aef1",
+      "product_id": "90311017",
+      "type": "stock_in",
+      "quantity": 4,
+      "note": "qw",
+      "date": "2024-11-23T16:28:25.037Z"
     }
   ]
 }
