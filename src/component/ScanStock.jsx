@@ -10,7 +10,7 @@ const ScanStock = () => {
   const [data, setData] = useState("Not Found");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { product, loading, error } = useSelector((state) => state.products);
+  const { product } = useSelector((state) => state.products);
 
   const [inputLog, setInputLog] = useState({
     product_id: "",
@@ -61,7 +61,6 @@ const ScanStock = () => {
       dispatch(addLogs(newLog));
       dispatch(stockChange({ id: product.id, stock: updatedStock })); // Update stock in the state
 
-      dispatch(addLogs(newLog));
       setInputLog({
         product_id: "",
         type: "stock_in",

@@ -8,11 +8,11 @@
       "stock": "11"
     },
     {
-      "id": "051111407592",
-      "name": "sdf",
-      "description": "asda",
-      "price": "10000",
-      "stock": "2"
+      "id": "90311017",
+      "name": "Meja",
+      "description": "Meja kayu jati",
+      "price": "2000000",
+      "stock": 15
     }
   ],
   "logs": [
@@ -33,12 +33,20 @@
       "date": "2024-11-23T14:59:05.673Z"
     },
     {
-      "id": "536e880e-2658-4ee2-b45c-e5dfa822aef1",
+      "id": "4f465695-9c2e-4210-b701-3d5c59c6f2ac",
       "product_id": "90311017",
       "type": "stock_in",
-      "quantity": 4,
-      "note": "qw",
-      "date": "2024-11-23T16:28:25.037Z"
+      "quantity": 5,
+      "note": "stock in barang meja",
+      "date": "2024-11-23T16:45:12.220Z"
+    },
+    {
+      "id": "4f465695-9c2e-4210-b701-3d5c59c6f2ac",
+      "product_id": "90311017",
+      "type": "stock_in",
+      "quantity": 5,
+      "note": "stock in barang meja",
+      "date": "2024-11-23T16:45:12.220Z"
     }
   ]
 }

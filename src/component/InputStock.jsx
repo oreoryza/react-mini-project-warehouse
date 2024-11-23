@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addData, updateData } from "../redux/async/dataSlice"; // Pastikan updateData diimport
+import { addData, updateData } from "../redux/async/dataSlice";
 import { useNavigate, useLocation } from "react-router-dom";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 
@@ -19,8 +19,6 @@ const InputStock = () => {
     price: "",
     stock: 0,
   });
-
-  const [data, setData] = useState("Not Found");
 
   useEffect(() => {
     if (state && state.product) {
@@ -71,11 +69,8 @@ const InputStock = () => {
             height={500}
             onUpdate={(err, result) => {
               if (result) {
-                setData(result.text);
                 setInput({ ...input, id: result.text });
-              } else {
-                setData("Not Found");
-              }
+              } 
             }}
           />
         </div>

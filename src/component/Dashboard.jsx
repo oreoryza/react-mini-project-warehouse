@@ -79,7 +79,9 @@ const Dashboard = () => {
         <ul>
           {logs.map((log) => (
             <li key={log.id}>
-                <h1>==========================================================</h1>
+              <h1>
+                ==========================================================
+              </h1>
               <p>Product ID: {log.product_id}</p>
               <p>Type: {log.type}</p>
               <p>Quantity: {log.quantity}</p>
