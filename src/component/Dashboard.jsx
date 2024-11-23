@@ -9,6 +9,9 @@ const Dashboard = () => {
     (state) => state.products
   );
   const { logs } = useSelector((state) => state.logs);
+
+  const { lang } = useSelector((state) => state.lang);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,57 +34,91 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="container">
+    <div>
       <div className="header">
-        <Link to="/stock-out">
-          <button>Scan</button>
-        </Link>
-        <Link to="/stock-in">
-          <button>Input</button>
-        </Link>
+        <div className="scan-button">
+          <h1>{lang === "en" ? "Scan Barcode" : "Pindai Kode Bar"}</h1>
+          <Link to="/stock-out">
+            <button className="">
+              <i className="bi bi-upc-scan i-cstm"></i>
+              {lang === "en" ? (
+                <p>
+                  Scan <span>Barcode</span>
+                </p>
+              ) : (
+                <p>
+                  Pindai <span>Kode Bar</span>
+                </p>
+              )}
+            </button>
+          </Link>
+        </div>
+        <div className="input-button">
+          <h1>{lang === "en" ? "Input Product" : "Masukkan Produk"}</h1>
+          <Link to="/stock-in">
+            <button>
+              <i className="bi bi-file-arrow-down-fill i-cstm"></i>
+              {lang === "en" ? (
+                <p>
+                  Input <span>Product</span>
+                </p>
+              ) : (
+                <p>
+                  Input <span>Produk</span>
+                </p>
+              )}
+            </button>
+          </Link>
+        </div>
+        <div className="arrow">
+          <a href="#product-list">
+            <i class="bi bi-chevron-down"></i>
+          </a>
+        </div>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Nama Produk</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>Stok</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td>{product.price}</td>
-              <td>{product.stock}</td>
-              <td>
-                <div className="action-btn">
-                  <button onClick={() => dispatch(deleteData(product.id))}>
-                    Hapus
-                  </button>
-                  <Link to="/stock-in" state={{ product }}>
-                    <button onClick={() => dispatch(toggleUpdate())}>
-                      Edit
-                    </button>
-                  </Link>
-                </div>
-              </td>
+        <h2 id="product-list">{lang === "en" ? "Product List:" : "Daftar Produk:"}</h2>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>{lang === "en" ? "Product Name" : "Nama Produk"}</th>
+              <th>{lang === "en" ? "Description" : "Deskripsi"}</th>
+              <th className="hidden">{lang === "en" ? "Price" : "Harga"}</th>
+              <th className="hidden">{lang === "en" ? "Stock" : "Stok"}</th>
+              <th>{lang === "en" ? "Action" : "Aksi"}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <tr key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td className="hidden">{product.price}</td>
+                <td className="hidden">{product.stock}</td>
+                <td>
+                  <div className="action-btn">
+                    <button onClick={() => dispatch(deleteData(product.id))}>
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                    <Link to="/stock-in" state={{ product }}>
+                      <button onClick={() => dispatch(toggleUpdate())}>
+                        <i class="bi bi-pencil-fill"></i>
+                      </button>
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <h2>Daftar Logs:</h2>
+      <h2>{lang === "en" ? "Log History:" : "Riwayat Catatan:"}</h2>
       <div className="log-container">
         <ul>
           {logs.map((log) => (
             <li key={log.id}>
-              <h1>
-                ==========================================================
-              </h1>
+              <h1>==============</h1>
               <p>Product ID: {log.product_id}</p>
               <p>Type: {log.type}</p>
               <p>Quantity: {log.quantity}</p>

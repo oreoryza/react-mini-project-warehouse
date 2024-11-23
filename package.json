@@ -12,7 +12,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
+    "bootstrap-icons": "^1.11.3",
     "json-server": "^1.0.0-beta.3",
+    "notiflix": "^3.2.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-qr-barcode-scanner": "^2.0.0",

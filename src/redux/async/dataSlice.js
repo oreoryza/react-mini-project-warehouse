@@ -38,6 +38,10 @@ export const stockChange = createAsyncThunk("products/stockChange", async (produ
   return response.data;
 });
 
+export const resetProduct = createAsyncThunk("products/resetProduct", async () => {
+  return {};
+});
+
 // Initial state
 const initialState = {
   products: [],
@@ -148,7 +152,11 @@ const dataSlice = createSlice({
       .addCase(stockChange.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      });  
+      })
+      /// Reset Product
+      .addCase(resetProduct.fulfilled, (state) => {
+        state.product = {};
+      }); 
   },
 });
 
