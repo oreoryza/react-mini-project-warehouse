@@ -97,11 +97,11 @@ const Dashboard = () => {
                 <td className="hidden">{product.stock}</td>
                 <td>
                   <div className="action-btn">
-                    <button onClick={() => dispatch(deleteData(product.id))}>
+                    <button title="Delete" onClick={() => dispatch(deleteData(product.id))}>
                       <i class="bi bi-trash-fill"></i>
                     </button>
                     <Link to="/stock-in" state={{ product }}>
-                      <button onClick={() => dispatch(toggleUpdate())}>
+                      <button title="Edit" onClick={() => dispatch(toggleUpdate())}>
                         <i class="bi bi-pencil-fill"></i>
                       </button>
                     </Link>

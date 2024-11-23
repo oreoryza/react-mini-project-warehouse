@@ -162,8 +162,8 @@ td {
 }
 
 .action-btn button:hover {
-  background-color: white;
-  color: #22b05b;
+  color: #cb4e52;
+  border: 1px solid #cb4e52;
 }
 
 body.dark-mode .action-btn button {
