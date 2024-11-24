@@ -66,7 +66,7 @@ const InputStock = () => {
 
   const handleResize = () => {
     if (window.innerWidth < 425) {
-      setScannerSize({ width: 250, height: 250 });
+      setScannerSize({ width: 275, height: 275 });
     } else if (window.innerWidth < 768) {
       setScannerSize({ width: 300, height: 300 });
     } else {
@@ -85,11 +85,15 @@ const InputStock = () => {
 
   return (
     <div>
-      <button className="btn-back" onClick={() => navigate(-1)}>
-        <i class="bi bi-chevron-left"></i> {lang === "en" ? "Back" : "Kembali"}
-      </button>
+      <div className="btn-back-container">
+        <button className="btn-back" onClick={() => navigate(-1)}>
+          <i class="bi bi-chevron-left"></i>{" "}
+          {lang === "en" ? "Back" : "Kembali"}
+        </button>
+      </div>
       {!isUpdate && (
         <div className="scan-container">
+          <div className="scan-box"></div>
           <BarcodeScannerComponent
             width={scannerSize.width}
             height={scannerSize.height}
